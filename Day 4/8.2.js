@@ -1,0 +1,7 @@
+let a = document.getElementById("in1").value
+let b = document.getElementById("in2").value
+let c = document.getElementById("in3").value
+
+console.log((+a + +b + +c) / 3)
+
+document.getElementById("ans").innerHTML = (+a + +b + +c) / 3
