@@ -1,0 +1,11 @@
+let arr = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+let a = arr.slice(-3, -1);
+console.log(a);
+let b = arr.slice(1, 3);
+console.log(b);
+let c = arr.slice(2, 4);
+console.log(c);
+let d = arr.slice(0, 2);
+console.log(d);
+let e = arr.slice(0, 3);
+console.log(e);

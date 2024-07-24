@@ -1,0 +1,11 @@
+let arr = [1]
+arr.push(2)
+console.log(arr)
+arr.push(3)
+console.log(arr)
+arr.push(4)
+console.log(arr)
+arr.push(5)
+console.log(arr)
+arr.push(6)
+console.log(arr)
