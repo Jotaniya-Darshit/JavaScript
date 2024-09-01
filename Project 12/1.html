@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Watch</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<style>
+
+/* Start Button*/
+
+.button1 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+  transition-duration: .3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.button1:hover {
+  width: 140px;
+  border-radius: 50px;
+  transition-duration: .3s;
+  background-color: rgb(198, 88, 88);
+  align-items: center;
+}
+
+.button1::before {
+  position: absolute;
+  top: -20px;
+  content: "Start";
+  color: white;
+  transition-duration: .3s;
+  font-size: 3px;
+}
+
+.button1:hover::before {
+  font-size: 13px;
+  margin-top: 4px;
+  margin-left: 50px;
+  opacity: 1;
+  transform: translateY(30px);
+  transition-duration: .3s;
+}
+
+/* Pause Button*/
+
+.button2 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+  transition-duration: .3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.button2:hover {
+  width: 140px;
+  border-radius: 50px;
+  transition-duration: .3s;
+  background-color: rgb(198, 88, 88);
+  align-items: center;
+}
+
+.button2::before {
+  position: absolute;
+  top: -20px;
+  content: "Stop";
+  color: white;
+  transition-duration: .3s;
+  font-size: 3px;
+}
+
+.button2:hover::before {
+  font-size: 13px;
+  margin-top: 4px;
+  margin-left: 50px;
+  opacity: 1;
+  transform: translateY(30px);
+  transition-duration: .3s;
+}
+
+/* Restart Button*/
+
+.button3 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+  transition-duration: .3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.button3:hover {
+  width: 140px;
+  border-radius: 50px;
+  transition-duration: .3s;
+  background-color: rgb(198, 88, 88);
+  align-items: center;
+}
+
+.button3::before {
+  position: absolute;
+  top: -20px;
+  content: "Restart";
+  color: white;
+  transition-duration: .3s;
+  font-size: 3px;
+}
+
+.button3:hover::before {
+  font-size: 13px;
+  margin-top: 4px;
+  margin-left: 65px;
+  opacity: 1;
+  transform: translateY(30px);
+  transition-duration: .3s;
+}
+
+</style>
+<body style="height: 600px;" class="d-flex justify-content-center align-items-center flex-column">
+     <div id="display" style="height: 100px; width: 300px; border: 1px solid rgb(198, 88, 88); display: flex; justify-content: center; align-items: center; font-size: 5ex; border-radius: 50px; background-color: rgb(198, 88, 88);">
+        00:00:00
+     </div>  
+     <div class="d-flex justify-content-between align-items-center">
+        <button id="start" class="button1 mx-3 mt-5">
+            <svg style="color: white;" width="20" height="20" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+              </svg>
+        </button>
+        <button id="stop" class="button2 mx-3 mt-5">
+            <svg style="color: white;" width="20" height="20" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                <path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5m5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5"/>
+              </svg>
+        </button>      
+        <button id="restart" class="button3 mx-3 mt-5">
+            <svg style="color: white;" width="20" height="20" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/>
+                <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/>
+              </svg>
+        </button>      
+     </div>
+</body>
+</html>
+<script src="1.js"></script>
