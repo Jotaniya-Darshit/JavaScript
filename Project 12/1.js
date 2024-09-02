@@ -9,6 +9,8 @@ let millisec = 0;
 let time = null;
 
 start.addEventListener('click', () => {
+    if(!time)
+    {
         time = setInterval(() => {
             millisec++;
             if (millisec >= 100) {
@@ -21,6 +23,7 @@ start.addEventListener('click', () => {
             }
             display.innerText = `${String(min).padStart(2, '0')}:${String(sec).padStart(2, '0')}:${String(millisec).padStart(2, '0')}`;
         });
+    }
 });
 
 stop.addEventListener('click', () => {
