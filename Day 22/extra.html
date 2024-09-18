@@ -11,7 +11,7 @@
         <input type="text" placeholder="Enter your subject" id="subject">
         <input type="submit" id="subBtn">
     </form>
-    <table border="1" width="60%">
+    <table style="margin-top: 50px;" border="2" width="60%">
         <thead>
             <tr>
                 <th>ID</th>
@@ -24,34 +24,38 @@
 
         </tbody>
     </table><script>
-  let name = document.getElementById("name");
+        let name = document.getElementById("name");
         let subject = document.getElementById("subject");
         let editId  = null;
         function addData(event){
-            event.preventDefault()
+        event.preventDefault()
 
-            let existingData = JSON.parse(localStorage.getItem("student")) || [];
-if(editId){
-    existingData.map((data) => {
-        if(data.id == editId) {
-            data.name = name.value,
-            data.subject = subject.value
+        let existingData = JSON.parse(localStorage.getItem("student")) || [];
+           if(editId)
+           {
+                existingData.map((data) => {
+                if(data.id == editId) 
+                {
+                    data.name = name.value,
+                    data.subject = subject.value
+                }
+                else
+                {
+                    data
+                }
+                })
+                editId = null
+            document.getElementById("subBtn").value = "Submit"
         }
-        else{
-            data
-        }
-    })
-        editId = null
-        document.getElementById("subBtn").value = "Submit"
-}else{
-    
-    let obj = {
+        else
+        {
+                let obj = {
                 id:Date.now(),
                 name : name.value,
                 subject : subject.value
-            }
-            existingData.push(obj)
-}
+                }
+                existingData.push(obj)
+        }
             
 
             localStorage.setItem("student",JSON.stringify(existingData))
@@ -81,14 +85,14 @@ if(editId){
                 cell1.innerText = allData[i].name
                 cell2.innerText = allData[i].subject
 
-                cell3.innerHTML=<button class="deleteBtn" data-id="${allData[i].id}">Delete</button>
-                cell4.innerHTML=<button class="editBtn" data-id="${allData[i].id}">Edit</button>
+                cell3.innerHTML=`<button class="deleteBtn" data-id="${allData[i].id}">Delete</button>`
+                cell4.innerHTML=`<button class="editBtn" data-id="${allData[i].id}">Edit</button>`
             }
 
             let deleteBtns= document.querySelectorAll(".deleteBtn");
 
-deleteBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
+        deleteBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
         let allData=JSON.parse(localStorage.getItem("student"));
         let btnId=btn.getAttribute("data-id");
         console.log(allData);
@@ -97,8 +101,8 @@ deleteBtns.forEach((btn) => {
         console.log(remainingData);
         localStorage.setItem("student",JSON.stringify(remainingData));
         getData()
+        })
     })
-})
        let editBtn = document.querySelectorAll(".editBtn")
        editBtn.forEach((btn) => {
         btn.addEventListener("click", ()=>{
@@ -112,11 +116,10 @@ deleteBtns.forEach((btn) => {
             editId = btnId;
 
             document.getElementById("subBtn").value = "Update"
-        })
+         })
        })
     }
-    getData();
-       
+    getData();   
 </script>
 </body>
 </html>
