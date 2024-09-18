@@ -31,8 +31,7 @@
         event.preventDefault()
 
         let existingData = JSON.parse(localStorage.getItem("student")) || [];
-           if(editId)
-           {
+           if(editId){
                 existingData.map((data) => {
                 if(data.id == editId) 
                 {
