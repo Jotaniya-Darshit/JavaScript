@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="1.css">
+</head>
+<body>
+<div class="first">
+    <div class="a1">
+        <form onsubmit="addData(event)">
+            <center><h1>Task Manager</h1></center>
+            <input required type="text" placeholder="Enter Task" id="task"><br>
+            <input style="margin-bottom: 10px;" required type="date" id="date"><br>
+            <label style="margin-top: 10px;" id="label">Status</label>
+            <select required id="status">
+                <option selected disabled>Selected</option>
+                <option id="Incomplete">Incomplete</option>
+                <option id="Complete">Complete</option>
+            </select>
+            <button type="submit" id="subBtn">Add Task</button>
+        </form>
+    </div>
+</div>
+<div class="second">
+<table cellspacing="10px">
+        <thead>
+            <tr>
+                <th id="tr1">Task</th>
+                <th id="tr1">Due Date</th>
+                <th id="tr1">Status</th>
+                <th id="tr4" colspan="3">Action</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+</table>
+</div>
+</body>
+</html>
+<script src="1.js"></script>
